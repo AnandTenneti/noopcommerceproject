@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-07-10T10:15:20 IST" name="No Op Commerce Test Suite" finished-at="2024-07-10T10:16:55 IST" duration-ms="94985">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runners.testRunner@3b0fe47a]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runners.testRunner@221a3fa4]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2024-07-10T10:15:20 IST" name="nopcommerce Tests in Chrome" finished-at="2024-07-10T10:16:19 IST" duration-ms="58849">
+      <class name="Runners.testRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:Runners.testRunner@3b0fe47a]" started-at="2024-07-10T10:15:20 IST" name="setUpClass" finished-at="2024-07-10T10:15:21 IST" duration-ms="955" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@25f7cc38]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runners.testRunner@3b0fe47a]" started-at="2024-07-10T10:15:21 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-07-10T10:15:58 IST" duration-ms="37548" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Login with valid user credentials"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Login functionality"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runners.testRunner@3b0fe47a]" started-at="2024-07-10T10:15:58 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-07-10T10:16:17 IST" duration-ms="18287" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Login with invalid user credentials"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Login functionality"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runners.testRunner@3b0fe47a]" started-at="2024-07-10T10:16:17 IST" name="tearDownClass" finished-at="2024-07-10T10:16:19 IST" duration-ms="1968" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- Runners.testRunner -->
+    </test> <!-- nopcommerce Tests in Chrome -->
+    <test started-at="2024-07-10T10:16:19 IST" name="nopcommerce Tests in Firefox" finished-at="2024-07-10T10:16:55 IST" duration-ms="36102">
+      <class name="Runners.testRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:Runners.testRunner@221a3fa4]" started-at="2024-07-10T10:16:19 IST" name="setUpClass" finished-at="2024-07-10T10:16:19 IST" duration-ms="52" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@563263a]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runners.testRunner@221a3fa4]" started-at="2024-07-10T10:16:19 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-07-10T10:16:38 IST" duration-ms="19622" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Login with valid user credentials"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Login functionality"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runners.testRunner@221a3fa4]" started-at="2024-07-10T10:16:38 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-07-10T10:16:53 IST" duration-ms="14905" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Login with invalid user credentials"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Login functionality"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runners.testRunner@221a3fa4]" started-at="2024-07-10T10:16:53 IST" name="tearDownClass" finished-at="2024-07-10T10:16:55 IST" duration-ms="1515" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- Runners.testRunner -->
+    </test> <!-- nopcommerce Tests in Firefox -->
+  </suite> <!-- No Op Commerce Test Suite -->
+</testng-results>

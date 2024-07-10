@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="No Op Commerce Test Suite">
+    <test verbose="2" preserve-order="true" name="nopcommerce Tests in Chrome" thread-count="2">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="Runners.testRunner"/>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true" name="nopcommerce Tests in Firefox" thread-count="2">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="Runners.testRunner"/>
+        </classes>
+    </test>
+</suite>
