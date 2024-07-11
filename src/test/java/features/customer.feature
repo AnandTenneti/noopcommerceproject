@@ -8,7 +8,7 @@ Feature: Check the customer functionality
     When User clicks on customers menu
     And click on customers Menu Item
 
-  @Regression,@End2End
+  @Regression,@End2End1
   Scenario: Add new user
     When click on Add new button
     Then User can view Add new customer page
@@ -31,6 +31,7 @@ Feature: Check the customer functionality
     When User search for an email
     And click on Search button
     Then User can view the search results
+
 
   Scenario: Search for a non-existing email id
     When User search for an email

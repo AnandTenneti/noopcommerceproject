@@ -8,16 +8,25 @@ Feature: Check the functionality of a product
     When User clicks on Catalog menu
     And click on Products Menu Item
 
-  @Regression
+  @Regression1
   Scenario: Add new product - Basic
     When click on Add new product button
     Then User can view 'Add a new product' page
     When User enter product info and click on Save button
     Then User can view product configuration message "The new product has been added successfully"
 
-  @End2End
+  @Regression1
+  Scenario: Search for an existing product
+    When User search for an existing product
+    And click on Product Search button
+    Then User can view the product search results
+    And click on the Edit button of the search result
+    And click on Delete button
+    Then User can view product configuration message "The product has been deleted successfully"
+
+  @Regression1
   Scenario: Search for a non-existing product
-    When User search for a product
+    When User search for an existing product
     And click on Product Search button
     Then User can view the product message 'No data available in table'
 
