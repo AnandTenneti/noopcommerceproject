@@ -26,13 +26,16 @@ Feature: Check the customer functionality
     And click on Save button
     Then User can view validation message "Please enter a valid email address."
 
-  @End2End
-  Scenario: Search for an existing email
+  @End2End1
+  Scenario: Search for an existing email and delete the customer
     When User search for an email
     And click on Search button
     Then User can view the search results
+    And click on the Edit button for the consumer search result
+    And click on consumer Delete button
+    Then User can view configuration message "The customer has been deleted successfully"
 
-
+  @End2End1
   Scenario: Search for a non-existing email id
     When User search for an email
     And click on Search button
