@@ -1,11 +1,14 @@
 package pageobjects;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.devtools.v85.page.Page;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+
+import java.util.List;
 
 public class ProductPage {
 
@@ -16,13 +19,11 @@ public class ProductPage {
         PageFactory.initElements(driver, this);
     }
 
-
     @FindBy(how = How.XPATH, using = "//a[@href='/Admin/Product/Create']")
     private WebElement addNewButton;
 
     @FindBy(how = How.ID, using = "Name")
     private WebElement productName;
-
 
     @FindBy(how = How.XPATH, using = "//textarea[@name='ShortDescription']")
     private WebElement shortDescription;
@@ -48,9 +49,12 @@ public class ProductPage {
     @FindBy(how = How.XPATH, using = "//table[@id='products-grid']//td")
     private WebElement gridMessage;
 
-    public void productDetails() {
-        productName.sendKeys("Apple Mac book");
-        shortDescription.sendKeys("Brief description about the product");
+    @FindBy(how = How.XPATH, using = "//table[@id='products-grid']/tbody/tr")
+    List<WebElement> productsList;
+
+    public void productDetails(String prodName, String prodDescription) {
+        productName.sendKeys(prodName);
+        shortDescription.sendKeys(prodDescription);
     }
 
     public void clickOnSaveButton() {
@@ -68,7 +72,6 @@ public class ProductPage {
     public String getMessage() {
         return configurationMessage.getText();
     }
-
     public String getValidationMessage() {
         return validationMessage.getText();
     }
@@ -91,8 +94,27 @@ public class ProductPage {
 
     public String viewMessage() {
         return gridMessage.getText();
-
     }
 
+    public void addProduct(String productName) {
+        searchProductName.sendKeys(productName);
+    }
+
+    public int getProductCount() {
+        return productsList.size();
+    }
+
+    public void clickOnEditButton() {
+        driver.findElement(
+                        By.xpath("//table[@id='products-grid']/tbody/tr/td/a[contains(text(),'Edit')]"))
+                .click();
+    }
+
+    public void clickOnProductDelete() throws Exception {
+        driver.findElement(By.id("product-delete")).click();
+        Thread.sleep(1000);
+            driver.findElement(By.xpath("//div[@class='modal-dialog']//button[contains(text(),'Delete')]")).click();
+        Thread.sleep(5000);
+    }
 
 }
