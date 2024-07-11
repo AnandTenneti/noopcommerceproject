@@ -52,6 +52,12 @@ public class ProductPage {
     @FindBy(how = How.XPATH, using = "//table[@id='products-grid']/tbody/tr")
     List<WebElement> productsList;
 
+    @FindBy(how = How.ID, using = "product-delete")
+    private WebElement productDeleteButton;
+
+    @FindBy(how = How.XPATH, using = "//div[@class='modal-dialog']//button[contains(text(),'Delete')]")
+    private WebElement confirmDeleteButtonInModalDialog;
+
     public void productDetails(String prodName, String prodDescription) {
         productName.sendKeys(prodName);
         shortDescription.sendKeys(prodDescription);
@@ -72,6 +78,7 @@ public class ProductPage {
     public String getMessage() {
         return configurationMessage.getText();
     }
+
     public String getValidationMessage() {
         return validationMessage.getText();
     }
@@ -111,9 +118,9 @@ public class ProductPage {
     }
 
     public void clickOnProductDelete() throws Exception {
-        driver.findElement(By.id("product-delete")).click();
+        productDeleteButton.click();
         Thread.sleep(1000);
-            driver.findElement(By.xpath("//div[@class='modal-dialog']//button[contains(text(),'Delete')]")).click();
+        confirmDeleteButtonInModalDialog.click();
         Thread.sleep(5000);
     }
 
