@@ -199,5 +199,18 @@ public class CustomerPage {
         Thread.sleep(5000);
     }
 
+    public void clickOnEditButton() {
+        driver.findElement(
+                        By.xpath("//table[@id='customers-grid']/tbody/tr/td/a[contains(text(),'Edit')]"))
+                .click();
+    }
 
+    public void clickOnConsumerDelete() throws InterruptedException {
+        driver.findElement(By.id("customer-delete")).click();
+        Thread.sleep(1000);
+        driver
+                .findElement(By.xpath("//div[@class='modal-dialog']//button[contains(text(),'Delete')]"))
+                .click();
+        Thread.sleep(3000);
+    }
 }

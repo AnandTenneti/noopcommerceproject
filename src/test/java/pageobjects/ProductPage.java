@@ -123,5 +123,4 @@ public class ProductPage {
         confirmDeleteButtonInModalDialog.click();
         Thread.sleep(5000);
     }
-
 }
