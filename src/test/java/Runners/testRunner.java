@@ -7,12 +7,12 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import util.ConfigReader;
 
-@CucumberOptions(features = {"src/test/java/features/login.feature"}, //src/test/java/features/customer.feature",
+@CucumberOptions(features = {"src/test/java/features/customer.feature", "src/test/java/features/product.feature"}, //src/test/java/features/customer.feature",
         glue = "stepdefinitions",
         monochrome = false,
-        snippets = CucumberOptions.SnippetType.CAMELCASE,
+        //snippets = CucumberOptions.SnippetType.CAMELCASE,
         dryRun = false,
-        tags = "@Regression",
+        tags = "@End2End1 or @Regression1",
 //        plugin = {"pretty", "html:target/test-output.html"},
         plugin = "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
         publish = true)
