@@ -121,6 +121,6 @@ public class ProductPage {
         productDeleteButton.click();
         Thread.sleep(1000);
         confirmDeleteButtonInModalDialog.click();
-        Thread.sleep(5000);
+        Thread.sleep(3000);
     }
 }
