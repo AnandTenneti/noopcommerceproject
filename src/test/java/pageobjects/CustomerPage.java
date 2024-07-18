@@ -103,19 +103,25 @@ public class CustomerPage {
     @FindBy(how = How.XPATH, using = "//table[@id='customers-grid']/tbody/tr")
     private List<WebElement> customerList;
 
+    @FindBy(how = How.CSS, using = "span#customer-delete")
+    private WebElement customerDeleteButton;
+
+    @FindBy(how = How.XPATH, using = "//div//button[contains(text(),'Delete')]")
+    private WebElement confirmCustomerDeleteButton;
+
     public void setEmail(String email) {
         customerEmail.clear();
         customerEmail.sendKeys(email);
     }
 
     public void setFirstName(String lastname) {
-        lastName.clear();
-        lastName.sendKeys(lastname);
+        firstName.clear();
+        firstName.sendKeys(lastname);
     }
 
     public void setLastName(String firstname) {
-        firstName.clear();
-        firstName.sendKeys(firstname);
+        lastName.clear();
+        lastName.sendKeys(firstname);
     }
 
     public void addDOB(String DateOfBirth) {
@@ -206,11 +212,17 @@ public class CustomerPage {
     }
 
     public void clickOnConsumerDelete() throws InterruptedException {
-        driver.findElement(By.id("customer-delete")).click();
+        customerDeleteButton.click();
         Thread.sleep(1000);
-        driver
-                .findElement(By.xpath("//div[@class='modal-dialog']//button[contains(text(),'Delete')]"))
-                .click();
+        confirmCustomerDeleteButton.click();
         Thread.sleep(3000);
+    }
+
+    public String addCustomerInfoAndSave(String email, String firstname, String lastname) {
+        setEmail(email);
+        setFirstName(firstname);
+        setLastName(lastname);
+        clickOnSaveButton();
+        return email;
     }
 }
