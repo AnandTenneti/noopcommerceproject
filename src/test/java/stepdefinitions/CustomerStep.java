@@ -4,14 +4,11 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import managers.DriverManager;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import pageobjects.CustomerPage;
 import pageobjects.HomePage;
-
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -23,6 +20,7 @@ public class CustomerStep {
 
     WebDriver driver = DriverManager.driver;
     static String email = DriverManager.randomString() + "@example.com";
+
 
     @When("User clicks on customers menu")
     public void user_clicks_on_customers_menu() throws Exception {
@@ -54,7 +52,6 @@ public class CustomerStep {
     @When("User enter customer info")
     public void user_enter_customer_info() throws Exception {
         System.out.println("User enter customer info");
-        // String email = DriverManager.randomString() + "@example.com";
 
         String details[] = new String[]{email, "Vincent", "Thomas", "23/07/1981", "This is an admin comment"};
         // Add customer details in an ArrayList
@@ -111,6 +108,7 @@ public class CustomerStep {
     @Then("User can view message {string}")
     public void user_can_view_message(String message) throws Exception {
         System.out.println("User can viw the results");
+        Thread.sleep(4000);
         customerPage = new CustomerPage(driver);
         customerPage.scrollIntoView();
         Assert.assertEquals(customerPage.getMessageWhenNoResultsInTable(),
@@ -165,5 +163,17 @@ public class CustomerStep {
         customerPage = new CustomerPage(driver);
         Assert.assertTrue(customerPage.getCustomerList().size() > 0);
         Thread.sleep(5000);
+    }
+
+    @Then("click on the Edit button for the consumer search result")
+    public void click_on_the_edit_button_for_the_consumer_search_result() {
+        System.out.println("User clicks on the edit button for the displayed consumer");
+        customerPage.clickOnEditButton();
+    }
+
+    @Then("click on consumer Delete button")
+    public void click_on_consumer_delete_button() throws InterruptedException {
+        System.out.println("User clicks on the consumer delete button");
+        customerPage.clickOnConsumerDelete();
     }
 }
