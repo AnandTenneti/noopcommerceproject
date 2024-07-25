@@ -18,6 +18,7 @@ public class HomePage {
 
     @FindBy(how = How.XPATH, using = "//input[@placeholder='Search']")
     private WebElement searchBox;
+    
     @FindBy(how = How.XPATH, using = "//p[contains(text(),'Customers')]")
     private List<WebElement> customerMenuItem;
 
