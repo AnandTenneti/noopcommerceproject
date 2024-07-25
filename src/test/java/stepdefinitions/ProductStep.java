@@ -48,13 +48,13 @@ public class ProductStep {
 
     }
 
-    @When("User enter product info and click on Save button")
-    public void user_enter_product_info_and_click_on_save_button() throws Exception {
-        System.out.println("Enter product details and click on Save button");
-        productPage.productDetails();
-        productPage.clickOnSaveButton();
-        Thread.sleep(2000);
-    }
+//    @When("User enter product info and click on Save button")
+//    public void user_enter_product_info_and_click_on_save_button() throws Exception {
+//        System.out.println("Enter product details and click on Save button");
+//        productPage.productDetails();
+//        productPage.clickOnSaveButton();
+//        Thread.sleep(2000);
+//    }
 
     @Then("User can view product configuration message {string}")
     public void user_can_view_product_configuration_message(String configurationMessage) {

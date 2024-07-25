@@ -21,6 +21,9 @@ public class HomePage {
     @FindBy(how = How.XPATH, using = "//p[contains(text(),'Customers')]")
     private List<WebElement> customerMenuItem;
 
+    @FindBy(how = How.XPATH, using = "//a[@href='/Admin/Category/List']")
+    private WebElement categoriesMenuItem;
+
     @FindBy(how = How.XPATH, using = "/html/body/div[3]/aside/div/div[4]/div/div/nav/ul/li[4]/ul/li[1]/a")
     private WebElement customerMenuOption;
 
@@ -44,5 +47,9 @@ public class HomePage {
 
     public void clickOnProductMenu() {
         productsMenuItem.get(0).click();
+    }
+
+    public void clickOnCategoriesMenuItem() {
+        categoriesMenuItem.click();
     }
 }

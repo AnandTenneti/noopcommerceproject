@@ -11,10 +11,10 @@ import org.testng.Assert;
 
 import java.util.List;
 
-public class CustomerPage {
+public class CustomerRolePage {
     WebDriver driver;
 
-    public CustomerPage(WebDriver driver) {
+    public CustomerRolePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
